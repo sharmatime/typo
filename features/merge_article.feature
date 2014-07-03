@@ -14,7 +14,7 @@ Feature: Write Articles
 
   Scenario: Successfully merge articles
     Given I am on the article page for "Foobar"
-    And I fill in "merge_with" with "3"
+    And I fill in "merge_with" with "Rainbows"
     And I press "Merge"
     Then the article "Foobar" should have body "Lorem Ipsum Punky Bruster"
     And show me the page

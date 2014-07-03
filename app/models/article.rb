@@ -82,7 +82,10 @@ class Article < Content
 
   def merge(merge_article)
     self.body = self.body + " " + merge_article.body
+    #self.comments = self.comments + merge_article.comments
+    #merge_article.comments.each{|comment| comment.article = self; comment.save}
     self.save
+    #Article.find(merge_article.id).destroy
   end
 
   attr_accessor :draft, :keywords
