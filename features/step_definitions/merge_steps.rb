@@ -1,6 +1,13 @@
 Given /^the following articles exist$/ do |table|
   # table is a Cucumber::Ast::Table
-  Article.create table.hashes
+	table.hashes.each do |row|
+		article = Article.new	
+  		article.id = row['id']
+  		article.title = row['title']
+  		article.body = row['body']
+  		article.published_at = DateTime.now
+  		article.save!
+  	end
 end
 
 Given /^the following comments exist$/ do |table|
